@@ -2,21 +2,19 @@ package ru.javawebinar.topjava.model;
 
 import java.time.LocalDateTime;
 
-/**
- * GKislin
- * 11.01.2015.
- */
 public class UserMeal {
-    private final LocalDateTime dateTime;
-
-    private final String description;
-
-    private final int calories;
+    private LocalDateTime dateTime;
+    private String description;
+    private int calories;
 
     public UserMeal(LocalDateTime dateTime, String description, int calories) {
         this.dateTime = dateTime;
         this.description = description;
         this.calories = calories;
+    }
+
+    public int getCalories() {
+        return calories;
     }
 
     public LocalDateTime getDateTime() {
@@ -27,7 +25,12 @@ public class UserMeal {
         return description;
     }
 
-    public int getCalories() {
-        return calories;
+    @Override
+    public String toString() {
+        return "UserMeal{" +
+                "dateTime=" + dateTime +
+                ", description='" + description + '\'' +
+                ", calories=" + calories +
+                '}';
     }
 }
